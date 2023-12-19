@@ -4,4 +4,4 @@ This template work with Zli.
 
 Currently, Zli are available:
 
-- [@vitejs/plugin-react](https://github.com/tototi5997/my-cli)
+- [@tototi5997/zli](https://github.com/tototi5997/my-cli)
