@@ -14,6 +14,9 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // 未使用的定义的变量
     "@typescript-eslint/no-unused-vars": "warn",
+    // 一个文件只 exports 一个变量
+    "react-refresh/only-export-components": "off",
   },
 }
