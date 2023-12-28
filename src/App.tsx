@@ -1,5 +1,9 @@
+import { useRoutes } from "react-router-dom"
+import { routerConfig } from "./router"
+
 const App = () => {
-  return <div>hello world</div>
+  const element = useRoutes(routerConfig)
+  return element
 }
 
 export default App
