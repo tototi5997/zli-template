@@ -4,6 +4,7 @@ import NotFoundPage from "./pages/404"
 
 export type RouterType = "hash" | "browser"
 
+// 当前路由模式
 const ROUTER_TYPE: RouterType = "hash"
 
 // 路由类型
