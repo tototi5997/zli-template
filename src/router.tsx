@@ -22,7 +22,7 @@ export const routerConfig: RouteObject[] = [
     path: "/home",
     element: <Home />,
   },
-  // 404 约定放在最下面
+  // 404 放在最下面
   {
     path: "*",
     element: <NotFoundPage />,

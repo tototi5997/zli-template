@@ -55,6 +55,10 @@
   pointer-events: none;
 }
 
+.trans {
+  transition: all .3s ease-in-out;
+}
+
 .loopStyle(@counter) when (@counter > 0) {
   .p@{counter} {
     padding: 1px * @counter;

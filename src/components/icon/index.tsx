@@ -8,7 +8,7 @@ interface IIcon {
 }
 
 const Icon: React.FC<IIcon> = (props) => {
-  const { name, size = 10, fill, ...rest } = props
+  const { name, size = 20, fill, ...rest } = props
 
   return (
     <svg width={size} height={size} fill={fill} {...rest} aria-hidden={true}>
