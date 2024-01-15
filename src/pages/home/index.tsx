@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div className={c(s.home)}>
       <Header />
-      this is home test page
     </div>
   )
 }

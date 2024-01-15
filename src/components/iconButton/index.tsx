@@ -1,20 +1,23 @@
+import { Tooltip } from "antd"
+import Icon from "../icon"
 import c from "classnames"
 import s from "./index.module.less"
-import Icon from "../icon"
 
 interface IIconButton {
   name: string
   iconSize?: number
   type?: "block" | "single"
-  activeFill?: string
+  title?: string
 }
 
 const IconButton: React.FC<IIconButton> = (props) => {
-  const { type = "single", name, iconSize } = props
+  const { type = "single", name, iconSize, title } = props
 
   return (
-    <div className={c(s.icon_button, s[`button_${type}`], "cursor-pointer")}>
-      <Icon name={name} size={iconSize} />
+    <div className={c(s.icon_button, s[`button_${type}`], "cursor-pointer trans")}>
+      <Tooltip title={title}>
+        <Icon name={name} size={iconSize} />
+      </Tooltip>
     </div>
   )
 }

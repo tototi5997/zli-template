@@ -1,4 +1,6 @@
+import { Badge } from "antd"
 import UserPopover from "@/pages/userPopover"
+import IconButton from "@/components/iconButton"
 import Icon from "@/components/icon"
 import User from "@/components/User"
 import c from "classnames"
@@ -6,12 +8,17 @@ import s from "./index.module.less"
 
 const Header = () => {
   return (
-    <div className={c(s.header, "h-50 w-full flex items-center p-10")}>
+    <div className={c(s.header, "h-50 w-full flex items-center p-20")}>
       <Icon name="favicon" />
       <div className="fs16 pl8">Platfrom Name</div>
-      <Icon name="alarm" />
-      <Icon name="setting" />
-      <User className={c(s.user_icon)} popContent={UserPopover} />
+
+      <section className={c(s.header_right, "flex gap-20")}>
+        <Badge count={10} dot size="small">
+          <IconButton name="alarm" title="Setting" />
+        </Badge>
+        <IconButton name="setting" title="Infomation" />
+        <User className={c(s.user_icon)} popContent={UserPopover} />
+      </section>
     </div>
   )
 }
