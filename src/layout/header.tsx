@@ -3,25 +3,18 @@ import UserPopover from "@/pages/userPopover";
 import IconButton from "@/components/iconButton";
 import Icon from "@/components/icon";
 import User from "@/components/User";
+import useModal from "@/hooks/useModal";
+import useI18n from "@/hooks/useI18n";
+import useTheme from "@/hooks/useTheme";
 import c from "classnames";
 import s from "./index.module.less";
-import { useTranslation } from "react-i18next";
-import { useCallback } from "react";
-import useModal from "@/hooks/useModal";
-
-enum LangeType {
-  ZN = "zh-CN",
-  EN = "en",
-}
 
 const Header = () => {
-  const { t, i18n } = useTranslation();
+  const { t, changeLang } = useI18n();
 
   const modal = useModal();
 
-  const curLang = i18n.language;
-
-  const handleChangeLang = useCallback(() => i18n.changeLanguage(curLang === LangeType.ZN ? LangeType.EN : LangeType.ZN), [curLang, i18n]);
+  const { toggleTheme } = useTheme();
 
   const handleEdit = () => modal?.show("demo_modal");
 
@@ -31,7 +24,8 @@ const Header = () => {
       <div className="fs16 pl28">{t("platformName")}</div>
 
       <section className={c(s.header_right, "flex gap-20")}>
-        <IconButton name="lang" onClick={handleChangeLang} />
+        <IconButton name="theme-switch" onClick={toggleTheme} />
+        <IconButton name="lang" onClick={changeLang} />
         <Badge count={10} dot size="small">
           <IconButton name="alarm" title="Infomation" />
         </Badge>
