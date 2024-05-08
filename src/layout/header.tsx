@@ -7,6 +7,7 @@ import c from "classnames";
 import s from "./index.module.less";
 import { useTranslation } from "react-i18next";
 import { useCallback } from "react";
+import useModal from "@/hooks/useModal";
 
 enum LangeType {
   ZN = "zh-CN",
@@ -16,9 +17,13 @@ enum LangeType {
 const Header = () => {
   const { t, i18n } = useTranslation();
 
+  const modal = useModal();
+
   const curLang = i18n.language;
 
   const handleChangeLang = useCallback(() => i18n.changeLanguage(curLang === LangeType.ZN ? LangeType.EN : LangeType.ZN), [curLang, i18n]);
+
+  const handleEdit = () => modal?.show("demo_modal");
 
   return (
     <div className={c(s.header, "h-50 w-full flex items-center p-20")}>
@@ -30,7 +35,7 @@ const Header = () => {
         <Badge count={10} dot size="small">
           <IconButton name="alarm" title="Infomation" />
         </Badge>
-        <IconButton name="setting" title="Setting" />
+        <IconButton name="setting" title="Setting" onClick={handleEdit} />
         <User className={c(s.user_icon)} popContent={UserPopover} />
       </section>
     </div>

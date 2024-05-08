@@ -13,5 +13,7 @@ module.exports = {
     "react-refresh/only-export-components": "off",
     // useEffect 必须设置依赖
     "react-hooks/exhaustive-deps": "off",
+    // 使用 any
+    "@typescript-eslint/no-explicit-any": "warn",
   },
-}
+};
