@@ -1,6 +1,7 @@
 import { MutableRefObject } from "react";
 import { IModalRoot } from "./ModalRoot";
 import { ModalKey } from "./Modals.map";
+import { ModalProps } from "antd";
 
 type ModalCloseCallback = (callbackParams: any) => void;
 
@@ -12,8 +13,8 @@ class GlobalModal {
     this.modalRef = modalRef;
   }
 
-  public show<T>(key: ModalKey, extra?: T) {
-    this.modalRef.current?.show(key, extra);
+  public show<T>(key: ModalKey, extra?: T, extraModalProps?: ModalProps) {
+    this.modalRef.current?.show(key, extra, extraModalProps);
     return this;
   }
 

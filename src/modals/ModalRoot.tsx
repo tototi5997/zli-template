@@ -1,12 +1,12 @@
 import React, { useImperativeHandle, useState } from "react";
 import modalMap, { GlobalMoalType, ModalKey } from "./Modals.map";
 import GlobalModal from "./index";
-import { Modal } from "antd";
+import { Modal, ModalProps } from "antd";
 import c from "classnames";
 import s from "./modal.module.less";
 
 export interface IModalRoot {
-  show: <T>(key: string, extra?: T) => void;
+  show: <T>(key: string, extra?: T, extraModalProps?: ModalProps) => void;
   hide: () => void;
 }
 
@@ -16,11 +16,11 @@ const ModalRoot = React.forwardRef((_, ref) => {
   const [modalProps, setModalProps] = useState<GlobalMoalType>();
 
   useImperativeHandle(ref, () => ({
-    show: (key: ModalKey, extra?: Record<string, unknown>) => {
+    show: (key: ModalKey, extra?: Record<string, unknown>, extraModalProps?: ModalProps) => {
       // find modal props by key, then set modal props
       const modalProps = modalMap.get(key);
       if (modalProps) {
-        setModalProps({ ...modalProps, extraProps: { ...modalProps?.extraProps, ...extra } });
+        setModalProps({ ...modalProps, extraProps: { ...modalProps?.extraProps, ...extra }, ...extraModalProps });
         setVisible(true);
       }
     },
