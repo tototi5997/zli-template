@@ -1,5 +1,5 @@
 import { Tooltip } from "antd"
-import Icon from "../icon"
+import Icon from "../Icon"
 import c from "classnames"
 import s from "./index.module.less"
 

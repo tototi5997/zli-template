@@ -1,20 +1,13 @@
-import { Header, Slider } from "@/layout"
-import c from "classnames"
-import s from "./index.module.less"
-import { Outlet } from "react-router-dom"
+import c from "classnames";
+import s from "./index.module.less";
 
 const Home = () => {
   return (
-    <div className={c(s.home, "relative flex flex-col")}>
-      <Header />
-      <div className="flex-1 flex">
-        <Slider />
-        <section className={c(s.body, "flex-1 relative")}>
-          <Outlet />
-        </section>
-      </div>
+    <div className={c(s.home, "relative fbv fbac fbjc")}>
+      <p className="text-[30px] font-[600]">ZLI TEMPLATE</p>
+      <div className="mt-20">Create by React + Vite + Tailwind</div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
