@@ -1,5 +1,5 @@
 import { HashRouter, BrowserRouter, RouteObject, Navigate } from "react-router-dom";
-import Home from "./pages/Homee";
+import Home from "./pages/Home";
 import NotFoundPage from "./pages/404";
 
 export type RouterType = "hash" | "browser";
